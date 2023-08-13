@@ -15,6 +15,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_aboutTherianJournal_triggered();
+
+    void on_exitTherianJournal_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

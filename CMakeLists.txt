@@ -38,6 +38,8 @@ else()
     else()
         add_executable(TherianJournal
             ${PROJECT_SOURCES}
+            Resources.qrc
+            about.h about.cpp about.ui
         )
     endif()
 endif()
