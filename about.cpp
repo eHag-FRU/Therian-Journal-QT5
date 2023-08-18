@@ -3,6 +3,7 @@
 
 //Added includes
 #include <QLabel>
+#include <QDebug>
 
 About::About(QWidget *parent) :
     QDialog(parent),
@@ -21,6 +22,7 @@ About::~About()
 void About::on_aboutCloseButton_clicked()
 {
     //Hide the window before destruction
+    qDebug() << "Hiding about window";
     this->hide();
 
     delete this;

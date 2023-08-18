@@ -40,6 +40,7 @@ else()
             ${PROJECT_SOURCES}
             Resources.qrc
             about.h about.cpp about.ui
+            addjournalentry.h addjournalentry.cpp addjournalentry.ui
         )
     endif()
 endif()

@@ -27,7 +27,9 @@
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="actionAdd_Entry"/>
     <addaction name="exitTherianJournal"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -53,6 +55,11 @@
   <action name="exitTherianJournal">
    <property name="text">
     <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionAdd_Entry">
+   <property name="text">
+    <string>Add Entry</string>
    </property>
   </action>
  </widget>
