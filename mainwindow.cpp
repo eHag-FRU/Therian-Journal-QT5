@@ -3,7 +3,8 @@
 
 //Added includes
 #include "about.h"
-#include "addjournalentry.h"
+#include "entryedit.h"
+
 
 #include <QIcon>
 #include <QDebug>
@@ -49,11 +50,16 @@ void MainWindow::on_exitTherianJournal_triggered()
 
 void MainWindow::on_actionAdd_Entry_triggered()
 {
-    //Making new journal entry
-    qDebug()<< "Making addJournalEntry widget";
-    addJournalEntry* newJournalEntry = new addJournalEntry(this);
+    //Making the add entry widget and showing
 
-    qDebug() << "Showing addJournalEntry widget";
-    newJournalEntry->show();
+    JournalEntry* test = new JournalEntry();
+
+    EntryEdit* editWindow = new EntryEdit(this, test);
+
+    editWindow->exec();
+
+
+
+
+    ui->entriesLayout->addWidget(test);
 }
-

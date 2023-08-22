@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+//Added includes
+#include "journalentry.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -15,6 +18,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void addEntry(JournalEntry);
+
 private slots:
     void on_aboutTherianJournal_triggered();
 
@@ -26,6 +31,6 @@ private:
     Ui::MainWindow *ui;
 
     //The vector to hold the current layout of the journal entries, TEMP
-    //QVector<addJournalEntry*> entries;
+    QVector<JournalEntry*> entries;
 };
 #endif // MAINWINDOW_H

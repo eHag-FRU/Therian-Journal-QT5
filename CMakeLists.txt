@@ -9,8 +9,11 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
+
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+
+
 
 set(PROJECT_SOURCES
         main.cpp
@@ -23,6 +26,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(TherianJournal
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        Resources.qrc
+        about.h about.cpp about.ui
+        journalentry.h journalentry.cpp journalentry.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET TherianJournal APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -32,6 +38,9 @@ else()
     if(ANDROID)
         add_library(TherianJournal SHARED
             ${PROJECT_SOURCES}
+            Resources.qrc
+            about.h about.cpp about.ui
+            journalentry.h journalentry.cpp journalentry.ui
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
@@ -40,7 +49,13 @@ else()
             ${PROJECT_SOURCES}
             Resources.qrc
             about.h about.cpp about.ui
-            addjournalentry.h addjournalentry.cpp addjournalentry.ui
+            journalentry.h journalentry.cpp journalentry.ui
+            entryedit.h entryedit.cpp entryedit.ui
+            Database.sql
+
+
+
+
         )
     endif()
 endif()
