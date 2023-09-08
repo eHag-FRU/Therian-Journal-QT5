@@ -2,7 +2,8 @@
 #define JOURNALENTRY_H
 
 #include <QWidget>
-
+#include <QDate>
+#include <QtSql>
 
 namespace Ui {
 class JournalEntry;
@@ -17,12 +18,26 @@ public:
     ~JournalEntry();
 
     QString getKin();
-    void setKin(QString newKin);
+    void setKin(QString newKin=nullptr);
+
+    QString getTitle();
+    void setTitle(QString newTitle=nullptr);
+
+    QDate getDate();
+    void setDate(QDate newDate);
 
 private:
     Ui::JournalEntry *ui;
 
     QString kin;
+    QString title;
+    QDate date;
 };
 
+
+
+
+namespace QtSql {
+
+}
 #endif // JOURNALENTRY_H

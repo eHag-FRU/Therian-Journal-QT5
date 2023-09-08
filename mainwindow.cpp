@@ -59,6 +59,8 @@ void MainWindow::on_actionAdd_Entry_triggered()
     editWindow->exec();
 
 
+    qDebug() << "Now on the main window";
+    qDebug() << "The kin in the journal entry is: " << test->getKin();
 
 
     ui->entriesLayout->addWidget(test);

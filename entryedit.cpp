@@ -23,6 +23,12 @@ void EntryEdit::on_entryAdd_accepted()
 
     entry->setKin(ui->kinChoice->currentText());
 
+    this->entryTitle = ui->entryTitleLineEdit->text();
+
+    this->entryDate = ui->dateDateEdit->date();
+    qDebug() << "The kin in the new entry is now" << entry->getKin();
+
+    //this->updateJournalEntry();
 
     //Hide and close widget
     this->close();

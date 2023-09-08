@@ -4,6 +4,7 @@
 #include <QDialog>
 
 //#include <QSqlDatabase>
+#include <QDate>
 
 #include "journalentry.h"
 
@@ -28,6 +29,10 @@ private:
     Ui::EntryEdit *ui;
 
     JournalEntry* entry = new JournalEntry();
+
+    QDate entryDate;
+
+    QString entryTitle;
 
     //QSqlDatabase* test = new QSqlDatabse();
 

@@ -20,5 +20,27 @@ QString JournalEntry::getKin() {
 void JournalEntry::setKin(QString newKin) {
     if (!newKin.isEmpty()) {
         kin = newKin;
+
+        ui->kinAssociation->setText(newKin);
     }
+}
+
+void JournalEntry::setDate(QDate newDate) {
+    if (newDate != date) {
+        date = newDate;
+    }
+}
+
+QDate JournalEntry::getDate() {
+    return date;
+}
+
+void JournalEntry::setTitle(QString newTitle) {
+    if (!newTitle.isEmpty() && newTitle != title) {
+        title = newTitle;
+    }
+}
+
+QString JournalEntry::getTitle() {
+    return title;
 }
