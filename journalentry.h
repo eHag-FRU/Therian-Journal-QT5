@@ -32,12 +32,7 @@ private:
     QString kin;
     QString title;
     QDate date;
+    QSqlDatabase database;
 };
 
-
-
-
-namespace QtSql {
-
-}
 #endif // JOURNALENTRY_H

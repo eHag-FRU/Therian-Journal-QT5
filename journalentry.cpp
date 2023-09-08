@@ -6,10 +6,15 @@ JournalEntry::JournalEntry(QWidget *parent) :
     ui(new Ui::JournalEntry)
 {
     ui->setupUi(this);
+
+    database.addDatabase("QSQLITE", "./Database.sql");
 }
 
 JournalEntry::~JournalEntry()
 {
+
+    qDebug() << "The database open?: " << database.open() << "| and now closing";
+
     delete ui;
 }
 
