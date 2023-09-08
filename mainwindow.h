@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include <QtSql>
+
 //Added includes
 #include "journalentry.h"
 
@@ -32,5 +34,8 @@ private:
 
     //The vector to hold the current layout of the journal entries, TEMP
     QVector<JournalEntry*> entries;
+
+
+    QSqlDatabase database;
 };
 #endif // MAINWINDOW_H

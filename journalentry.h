@@ -3,7 +3,6 @@
 
 #include <QWidget>
 #include <QDate>
-#include <QtSql>
 
 namespace Ui {
 class JournalEntry;
@@ -32,7 +31,6 @@ private:
     QString kin;
     QString title;
     QDate date;
-    QSqlDatabase database;
 };
 
 #endif // JOURNALENTRY_H

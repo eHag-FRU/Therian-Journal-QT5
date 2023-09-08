@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowTitle("Therian Journal");
 
     this->setWindowIcon(QIcon(":/Images/icon.png"));
+
+    database.addDatabase("QSQLITE", "./Database.sql");  //Opening the database connection to the journal entries
 }
 
 MainWindow::~MainWindow()
