@@ -4,6 +4,7 @@
 //Added includes
 #include "about.h"
 #include "entryedit.h"
+#include "kin.h"
 
 
 #include <QIcon>
@@ -19,7 +20,15 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->setWindowIcon(QIcon(":/Images/icon.png"));
 
-    database.addDatabase("QSQLITE", "./Database.sql");  //Opening the database connection to the journal entries
+    qDebug() << database.drivers();
+
+
+    database.addDatabase("QSQLITE", "./Database.sql");
+
+    database.open();
+
+    qDebug() << "Does connection exist?: " << database.isOpen();
+
 }
 
 MainWindow::~MainWindow()
@@ -67,3 +76,27 @@ void MainWindow::on_actionAdd_Entry_triggered()
 
     ui->entriesLayout->addWidget(test);
 }
+
+void MainWindow::on_actionAdd_Kin_Personality_triggered()
+{
+    qDebug() << "Now making kin add widget";
+
+    Kin* newKin = new Kin(this);
+
+    newKin->show();
+}
+
+
+void MainWindow::on_addJournalEntryButton_clicked()
+{
+    //Calls the method already implemented
+    this->on_actionAdd_Entry_triggered();
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    //Calls the method already implemented
+    this->on_actionAdd_Kin_Personality_triggered();
+}
+

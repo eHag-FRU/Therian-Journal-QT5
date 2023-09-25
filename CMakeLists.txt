@@ -52,6 +52,7 @@ else()
             journalentry.h journalentry.cpp journalentry.ui
             entryedit.h entryedit.cpp entryedit.ui
             Database.sql
+            kin.h kin.cpp kin.ui
 
 
 

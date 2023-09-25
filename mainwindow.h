@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 #include <QtSql>
+#include <QSqlQuery>
 
 //Added includes
 #include "journalentry.h"
@@ -28,6 +29,12 @@ private slots:
     void on_exitTherianJournal_triggered();
 
     void on_actionAdd_Entry_triggered();
+
+    void on_actionAdd_Kin_Personality_triggered();
+
+    void on_addJournalEntryButton_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
